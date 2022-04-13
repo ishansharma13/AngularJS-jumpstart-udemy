@@ -4,10 +4,16 @@
     <title>Iterating Over Data</title>
 </head>
 <body ng-init="people=[{name:'John', city:'Chandler'}, {name:'Tina', city:'New York'}, {name:'Dave', city:'Seattle'}]">
-    <ul>
-        <li data-ng-bind-template="{{person.name}} {{person.city}}" data-ng-repeat="person in people"></li>
-    </ul>
-
+    <table>
+        <tr>
+            <th> Name </th>
+            <th> City </th>
+        </tr>
+        <tr data-ng-repeat="person in people">
+            <td data-ng-bind="person.name"> </td>
+            <td data-ng-bind="person.city"></td>
+        </tr>
+    </table>
 
     <script src="angular.js"></script>
 </body>
