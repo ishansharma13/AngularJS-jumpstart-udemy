@@ -10,12 +10,12 @@
     <br /><br />
     <table>
         <tr>
-            <th>Name</th>
-            <th>City</th>
-            <th>Order Total</th>
-            <th>Joined</th>
+            <th data-ng-click="sortVar='name';reverse=!reverse">Name</th>
+            <th data-ng-click="sortVar='city';reverse=!reverse">City</th>
+            <th data-ng-click="sortVar='orderTotal';reverse=!reverse">Order Total</th>
+            <th data-ng-click="sortVar='joined';reverse=!reverse">Joined</th>
         </tr>
-        <tr ng-repeat="cust in customers | filter: nameInput | orderBy: 'name' ">
+        <tr ng-repeat="cust in customers | filter: nameInput | orderBy: sortVar:reverse ">
             <td>{{ cust.name }}</td>
             <td>{{ cust.city }}</td>
             <td>{{ cust.orderTotal | currency:'INR ' }}</td>
