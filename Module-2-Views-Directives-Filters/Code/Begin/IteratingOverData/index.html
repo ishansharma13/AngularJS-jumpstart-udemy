@@ -4,7 +4,9 @@
     <title>Iterating Over Data</title>
 </head>
 <body ng-init="names=['Dave','Jeff','Heedy','Danny']">
-
+    <ul>
+        <li data-ng-bind="name" data-ng-repeat="name in names"></li>
+    </ul>
 
 
     <script src="angular.js"></script>
