@@ -8,14 +8,14 @@
     <h2>Customers</h2>
     Filter: <input type="text" data-ng-model="nameInput.name"/>
     <br /><br />
-    <table data-ng-controller="CustomersController">
+    <table data-ng-controller="CustomersController as ctrl">
         <tr>
-            <th data-ng-click="doSort('name')">Name</th>
-            <th data-ng-click="doSort('city')">City</th>
-            <th data-ng-click="doSort('orderTotal')">Order Total</th>
-            <th data-ng-click="doSort('joined')">Joined</th>
+            <th data-ng-click="ctrl.doSort('name')">Name</th>
+            <th data-ng-click="ctrl.doSort('city')">City</th>
+            <th data-ng-click="ctrl.doSort('orderTotal')">Order Total</th>
+            <th data-ng-click="ctrl.doSort('joined')">Joined</th>
         </tr>
-        <tr ng-repeat="cust in customers | filter: nameInput | orderBy: sortVar:reverse ">
+        <tr ng-repeat="cust in ctrl.customers | filter: nameInput | orderBy: ctrl.sortVar:ctrl.reverse ">
             <td>{{ cust.name }}</td>
             <td>{{ cust.city }}</td>
             <td>{{ cust.orderTotal | currency:'INR ' }}</td>
