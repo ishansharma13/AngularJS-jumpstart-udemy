@@ -11,3 +11,22 @@ Directives can be used for DOM manipulation, handling events, hide/show data, ma
 
 ## Filters:
 These are simply used to sort, filter or order data by properties assigned in variables or objects.
+
+# Module 3: Controllers, Scopes and Modules:
+## Controller:
+Brain for a view
+Responsible for:
+ fetching data from apis,
+ perform some business logic, 
+ dom manipulations, 
+ responding to view triggered events, 
+ interacts with the view using scope object, etc.
+
+## Scope:
+it acts as a glue between a controller and a view
+the controller stores the model data after some transformations/manipulations here.
+This is injected into the view.
+View interacts with this and not the controller for model
+also known as View Model in MVVM pattern
+
+#### "$scope" is a special parameter which is injected automatically by angularJS
