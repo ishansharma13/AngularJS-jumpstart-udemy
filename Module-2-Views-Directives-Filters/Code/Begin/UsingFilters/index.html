@@ -1,19 +1,19 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="customersApp">
 <head>
     <title>Iterating Over Data</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
-<body ng-init="customers=[{joined: '2000-12-02', name:'John', city:'Chandler', orderTotal: 9.9956}, {joined: '1965-01-25',name:'Zed', city:'Las Vegas', orderTotal: 19.99},{joined: '1944-06-15',name:'Tina', city:'New York', orderTotal:44.99}, {joined: '1995-03-28',name:'Dave', city:'Seattle', orderTotal:101.50}]">
+<body >
     <h2>Customers</h2>
     Filter: <input type="text" data-ng-model="nameInput.name"/>
     <br /><br />
-    <table>
+    <table data-ng-controller="CustomersController">
         <tr>
-            <th data-ng-click="sortVar='name';reverse=!reverse">Name</th>
-            <th data-ng-click="sortVar='city';reverse=!reverse">City</th>
-            <th data-ng-click="sortVar='orderTotal';reverse=!reverse">Order Total</th>
-            <th data-ng-click="sortVar='joined';reverse=!reverse">Joined</th>
+            <th data-ng-click="doSort('name')">Name</th>
+            <th data-ng-click="doSort('city')">City</th>
+            <th data-ng-click="doSort('orderTotal')">Order Total</th>
+            <th data-ng-click="doSort('joined')">Joined</th>
         </tr>
         <tr ng-repeat="cust in customers | filter: nameInput | orderBy: sortVar:reverse ">
             <td>{{ cust.name }}</td>
@@ -24,5 +24,11 @@
     </table>
 
     <script src="angular.js"></script>
+    <script>
+
+        var app = angular.module('customersApp', []);
+    
+    </script>
+    <script src="app/controllers/CustomerController.js"></script>
 </body>
 </html>
