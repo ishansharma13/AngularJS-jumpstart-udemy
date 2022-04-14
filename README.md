@@ -30,3 +30,16 @@ View interacts with this and not the controller for model
 also known as View Model in MVVM pattern
 
 #### "$scope" is a special parameter which is injected automatically by angularJS
+
+## Modules:
+Modules are containers that are used to isolate the developer's code from the global scope
+They are containers for:
+    Filters
+    Controllers
+    Directives
+    Factories
+    Services
+    Routes
+
+One module can reference or include other modules (called Module Injection)
+To use a module in the view set ng-app directive equal to the name of the module.
