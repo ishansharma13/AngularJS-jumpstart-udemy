@@ -10,4 +10,4 @@
     }
     custCtrl.$inject = ['$scope'];
     angular.module('customersApp').controller('CustomersController',custCtrl)
-}());
+})();
