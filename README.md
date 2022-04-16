@@ -43,3 +43,11 @@ They are containers for:
 
 One module can reference or include other modules (called Module Injection)
 To use a module in the view set ng-app directive equal to the name of the module.
+
+# Module 4 : Routing
+## Routing
+Routing is the process of configuring an appropriate route with a controller and a view
+To initialise routing,
+    One needs a script based on angularjs version which can be downloaded from:
+        ```https://code.angularjs.org/version_number```
+    Copy the contents of angular-route.js in a file in your local working directory and import it in index.html, and then import 'ngRoute' while declaring a controller
