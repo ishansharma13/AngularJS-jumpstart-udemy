@@ -1,12 +1,12 @@
 (function() {
     
-    var CustomersController = function ($scope,customersFactory) {
+    var CustomersController = function ($scope,customersService) {
         $scope.sortBy = 'name';
         $scope.customers = [];
         $scope.reverse = false;
 
         function init(){
-            $scope.customers = customersFactory.getCustomers();
+            $scope.customers = customersService.getCustomers();
         }
         
         $scope.doSort = function(propName) {
@@ -16,7 +16,7 @@
         init();  
     };
     
-    CustomersController.$inject = ['$scope','customersFactory'];
+    CustomersController.$inject = ['$scope','customersService'];
 
     angular.module('customersApp')
       .controller('CustomersController', CustomersController);
