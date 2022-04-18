@@ -87,3 +87,16 @@ Difference between a factory and a service:
 In Factory, we create a function that return an object that contains all the properties one can use by initialising it.
 
 While in service, the created function is the object itself.
+
+### Factories and Services are built on top of Providers
+
+## Value and Constants
+    As the name suggests, these are (key,value) pairs that can be injected into an app.
+    However, values cannot be injected into module.config, but constants can.
+
+    Values and Constants provide a way to define variables which are global to an app and does not depend on factories or services.
+
+## Making Ajax Calls to an API.
+    For this $http is used inside a service or a factory such that it returns a promise
+
+    this promise, is then taken care of in the appropriate controller.
